@@ -1,7 +1,5 @@
-#!/bin/sh -l
+#!/bin/bash -l
 
-pushd $GITHUB_WORKSPACE
-nim --version
-nim auth login $1
-nim project deploy $2 --env .env --yarn
-popd
+/home/node/.npm-global/bin/nim --version && \
+/home/node/.npm-global/bin/nim auth login $1 && \
+/home/node/.npm-global/bin/nim project deploy $2 --env .env --yarn

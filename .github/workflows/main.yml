@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  deploy_to_nimbella:
+    runs-on: ubuntu-latest
+    name: A job to deploy nimbella project
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy to Nimbella
+        uses: ./ # Uses an action in the root directory
+        with:
+          nimbella-token: ${{ secrets.NIMBELLA_TOKEN }}
