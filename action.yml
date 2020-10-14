@@ -1,0 +1,23 @@
+name: 'nimbella-deploy-action'
+description: 'Deploy your project to the nimbella cloud'
+author: 'Nikhil Acharya <niks3089@gmail.com>'
+inputs:
+  nimbella-token:
+    description: 'Login token of the namespace to deploy'
+    required: true
+    default: ''
+  deploy-dir:
+    description: 'Directory of the project to deploy'
+    required: false
+    default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.nimbella-token }}
+    - ${{ inputs.deploy-dir }}
+
+# branding
+branding:
+    icon: terminal
+    color: green
