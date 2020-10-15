@@ -1,4 +1,4 @@
-FROM node:10.16
+FROM nimbella/action-nodejs-v10:nightly
 
 COPY entrypoint.sh /entrypoint.sh
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
